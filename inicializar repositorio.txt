@@ -1,0 +1,92 @@
+Tutorial Básico para Uso de Git e GitHub no Cenário Descrito
+
+Pré-requisitos
+1. Instale o Git:
+        Windows: Download Git e siga as instruções de instalação.
+        Linux: Use o gerenciador de pacotes do sistema, como sudo apt install git no Ubuntu.
+2. Crie uma conta no GitHub:
+        Acesse GitHub e registre-se, caso ainda não tenha uma conta.
+
+####################################################################
+
+Configuração Inicial do Git
+
+1. Configurar o Git no Windows e Linux: Abra o terminal e execute:
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@exemplo.com"
+
+2. Verificar configuração:
+git config --list
+
+###################################################################
+
+Criando o Repositório no GitHub
+
+1. Acesse o GitHub, clique em New Repository, escolha:
+        Nome do repositório (ex.: meu-projeto).
+        Marque Private para maior segurança.
+        Não marque a opção de adicionar um README.md.
+
+2. Após criar, o GitHub mostrará instruções para inicializar o repositório local. Guarde a URL do repositório (ex.: https://github.com/usuario/meu-projeto.git).
+
+####################################################################
+
+Configurando o Repositório Local
+
+1 - Inicialize o repositório local no computador de trabalho: No terminal, vá até a pasta do projeto:
+cd /caminho/para/sua/pasta
+git init
+
+2 - Adicione o repositório remoto (GitHub):
+git remote add origin https://github.com/usuario/meu-projeto.git
+
+3 - Adicione e envie arquivos para o GitHub:
+git add .
+git commit -m "Primeiro commit"
+git branch -M main
+git push -u origin main
+
+####################################################################
+
+Sincronizando os Arquivos
+
+No Trabalho (Windows):
+
+1 - Após editar os arquivos, salve e abra o terminal:
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+
+2 - Ao chegar ao Linux (casa), atualize o projeto.
+
+####################################################################
+
+Em Casa (Linux):
+
+1 - No terminal, acesse a pasta do projeto e baixe as alterações:
+cd /caminho/para/sua/pasta
+git pull origin main
+
+2 - Após editar, envie alterações para o GitHub:
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+
+3 - No dia seguinte, no trabalho, atualize a pasta local:
+git pull origin main
+
+####################################################################
+
+Resolvendo Conflitos
+
+Se alterar o mesmo arquivo nos dois ambientes sem atualizar o GitHub, o Git pode gerar conflitos. Ele indicará o arquivo problemático e você poderá resolvê-lo manualmente no editor de texto. Depois, finalize com:
+git add .
+git commit -m "Resolvendo conflitos"
+git push origin main
+
+####################################################################
+
+Dicas Adicionais
+    Evite nomes de arquivos conflitantes (sensibilidade de maiúsculas/minúsculas pode variar entre 	sistemas).
+    Realize git pull sempre antes de iniciar o trabalho em qualquer máquina.
+

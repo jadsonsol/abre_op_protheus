@@ -1,0 +1,38 @@
+1. Autenticação via SSH
+	A autenticação via SSH é prática e altamente segura. Siga estas etapas:
+
+1.1. Gerar uma chave SSH
+Se você ainda não tem uma chave SSH, gere-a com o seguinte comando:
+
+ssh-keygen -t ed25519 -C "seu_email@example.com"
+	Substitua "seu_email@example.com" pelo e-mail associado à sua conta no GitHub.
+	Quando solicitado o local para salvar a chave, pressione "Enter" para usar o padrão (`~/.ssh/id_ed25519`).
+	Configure uma frase de segurança (opcional, mas recomendada).
+
+1.2. Adicionar a chave SSH ao agente
+Execute os comandos abaixo para iniciar o agente SSH e adicionar sua chave:
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+1.3. Adicionar a chave pública ao GitHub
+	1.3.1. Copie a chave pública gerada:
+	
+	cat ~/.ssh/id_ed25519.pub
+
+	1.3.2. Acesse sua conta no GitHub:
+	Vá para Settings > SSH and GPG keys > New SSH Key
+	Cole a chave pública copiada e dê um título descritivo.
+
+1.4. Testar a conexão SSH
+Verifique se está tudo funcionando:
+
+ssh -T git@github.com
+```
+
+Se configurado corretamente, você verá uma mensagem de boas-vindas.
+
+1.5. Configurar o repositório para usar SSH
+Certifique-se de que a URL do seu repositório está no formato SSH:
+
+git remote set-url origin git@github.com:usuario/repo.git
