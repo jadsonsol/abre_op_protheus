@@ -31,7 +31,7 @@ Criando o Repositório no GitHub
 
 ####################################################################
 
-Configurando o Repositório Local
+Configurando o Repositório Local - Windows
 
 1 - Inicialize o repositório local no computador de trabalho: No terminal, vá até a pasta do projeto:
 cd /caminho/para/sua/pasta
@@ -44,6 +44,34 @@ git remote add origin https://github.com/usuario/meu-projeto.git
 git add .
 git commit -m "Primeiro commit"
 git branch -M main
+git push -u origin main
+
+=====================================================================
+
+Configurando o Repositório Local - Linux Autenticação via SSH
+
+1 - Inicialize o repositório local no computador de casa/linux: No terminal, vá até a pasta do projeto:
+cd /caminho/para/sua/pasta
+git init
+
+** Cenário onde já temos os arquivos no GitHub, e queremos trazer o mesmo repositório para a máquina local Linux:
+2 - Adicione e envie arquivos para o GitHub:
+git branch -M main
+** Apenas para confirmar que o repositório local, está na branch main:
+git status
+**
+git remote add origin git@github.com:usuario/meu_projeto.git
+git pull origin main
+
+** Cenário onde o repositório que iniciou o projeto foi a máquina local Linux:
+2 - Adicione e envie arquivos para o GitHub:
+git add .
+git commit -m "Primeiro commit"
+git branch -M main
+** Apenas para confirmar que o repositório local, está na branch main:
+git status
+**
+git remote add origin git@github.com:usuario/meu_projeto.git
 git push -u origin main
 
 ####################################################################
@@ -89,4 +117,3 @@ git push origin main
 Dicas Adicionais
     Evite nomes de arquivos conflitantes (sensibilidade de maiúsculas/minúsculas pode variar entre 	sistemas).
     Realize git pull sempre antes de iniciar o trabalho em qualquer máquina.
-
